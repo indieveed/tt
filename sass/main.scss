@@ -6,7 +6,6 @@
 }
 
 body {
-  margin: 20px 30px;
 }
 
 .gamma {
@@ -17,6 +16,15 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+.box {
+  margin: 1em;
+  padding: 1em;
+}
+
+.box--dark {
+  background-color: #323649;
+}
+
 $button-text-color: #000;
 $button-padding: .2em 1.7em;
 $btn-radius: 6px;
@@ -25,7 +33,6 @@ $btn-radius: 6px;
 .btn {
   position: relative;
   border: 0;
-  @include background(linear-gradient(#f2f2f2 30%, #e2e2e2 70%));
   color: $button-text-color;
   display: inline-block;
   vertical-align: middle;
@@ -35,9 +42,9 @@ $btn-radius: 6px;
   padding: $button-padding;
   text-decoration: none;
   line-height: 1.3;
-  // border: 1px solid rgba(#000, .35);
-  // @include border-image (linear-gradient(rgba(#000, .35) 0%, rgba(#000, .1) 100%));
+  @include background(linear-gradient(#f2f2f2 30%, #e2e2e2 70%));
   @include border-radius($btn-radius);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
   &:before {
     content: "";
     display: inline-block;
@@ -48,7 +55,22 @@ $btn-radius: 6px;
     right: -1px;
     z-index: -1;
     @include border-radius($btn-radius+1px);
-    @include background(linear-gradient(to top, rgba(#000, .35) 0%, rgba(#000, .1) 100%));
+    @include background(linear-gradient(bottom, rgba(#000, .35) 0%, rgba(#000, .1) 100%));
+  }
+
+  &:hover {
+    @include background(linear-gradient(bottom, #fdffcc 30%, #feffeb 70%));
+  }
+  &:active {
+    @include single-box-shadow(rgba(0,0,0,.26), 0, 2px, 3px, 0, inset);
+    @include background(linear-gradient(bottom, #f2f2f2 30%, #e2e2e2 70%));
+  }
+  &:focus {
+    @include single-box-shadow(rgba(0,35,214,.94), 0, 0, 4px, 0);
+    outline: 0;
+    &:before {
+      opacity: 0;
+    }
   }
 }
 

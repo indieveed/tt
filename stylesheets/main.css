@@ -70,30 +70,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-sizing: border-box;
 }
 
-/* line 8, ../sass/main.scss */
-body {
-  margin: 20px 30px;
-}
-
-/* line 12, ../sass/main.scss */
+/* line 11, ../sass/main.scss */
 .gamma {
   font-size: 11px;
 }
 
-/* line 16, ../sass/main.scss */
+/* line 15, ../sass/main.scss */
 .font--verdana {
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-/* line 25, ../sass/main.scss */
+/* line 19, ../sass/main.scss */
+.box {
+  margin: 1em;
+  padding: 1em;
+}
+
+/* line 24, ../sass/main.scss */
+.box--dark {
+  background-color: #323649;
+}
+
+/* line 33, ../sass/main.scss */
 .btn {
   position: relative;
   border: 0;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #f2f2f2), color-stop(70%, #e2e2e2));
-  background: -webkit-linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
-  background: -moz-linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
-  background: -o-linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
-  background: linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
   color: black;
   display: inline-block;
   vertical-align: middle;
@@ -103,13 +104,19 @@ body {
   padding: 0.2em 1.7em;
   text-decoration: none;
   line-height: 1.3;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #f2f2f2), color-stop(70%, #e2e2e2));
+  background: -webkit-linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
+  background: -moz-linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
+  background: -o-linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
+  background: linear-gradient(#f2f2f2 30%, #e2e2e2 70%);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
 }
-/* line 41, ../sass/main.scss */
+/* line 48, ../sass/main.scss */
 .btn:before {
   content: "";
   display: inline-block;
@@ -124,14 +131,44 @@ body {
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   border-radius: 7px;
-  background: -webkit-gradient(linear, to top, to bottom, color-stop(0%, rgba(0, 0, 0, 0.35)), color-stop(100%, rgba(0, 0, 0, 0.1)));
-  background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: -o-linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(0, 0, 0, 0.35)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+/* line 61, ../sass/main.scss */
+.btn:hover {
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(30%, #fdffcc), color-stop(70%, #feffeb));
+  background: -webkit-linear-gradient(bottom, #fdffcc 30%, #feffeb 70%);
+  background: -moz-linear-gradient(bottom, #fdffcc 30%, #feffeb 70%);
+  background: -o-linear-gradient(bottom, #fdffcc 30%, #feffeb 70%);
+  background: linear-gradient(bottom, #fdffcc 30%, #feffeb 70%);
+}
+/* line 64, ../sass/main.scss */
+.btn:active {
+  -webkit-box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(30%, #f2f2f2), color-stop(70%, #e2e2e2));
+  background: -webkit-linear-gradient(bottom, #f2f2f2 30%, #e2e2e2 70%);
+  background: -moz-linear-gradient(bottom, #f2f2f2 30%, #e2e2e2 70%);
+  background: -o-linear-gradient(bottom, #f2f2f2 30%, #e2e2e2 70%);
+  background: linear-gradient(bottom, #f2f2f2 30%, #e2e2e2 70%);
+}
+/* line 68, ../sass/main.scss */
+.btn:focus {
+  -webkit-box-shadow: 0 0 4px 0 rgba(0, 35, 214, 0.94);
+  -moz-box-shadow: 0 0 4px 0 rgba(0, 35, 214, 0.94);
+  box-shadow: 0 0 4px 0 rgba(0, 35, 214, 0.94);
+  outline: 0;
+}
+/* line 71, ../sass/main.scss */
+.btn:focus:before {
+  opacity: 0;
 }
 
-/* line 55, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 input.btn {
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom-color: rgba(0, 0, 0, 0.35);
