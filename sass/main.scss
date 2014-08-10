@@ -1,5 +1,6 @@
 @import "compass/reset";
 @import "compass/css3";
+@import "compass/typography/text/replacement";
 
 * {
   @include box-sizing(border-box);
@@ -24,6 +25,8 @@ body {
 .box--dark {
   background-color: #323649;
 }
+
+/* Buttons */
 
 $button-text-color: #000;
 $button-padding: .2em 1.7em;
@@ -78,3 +81,36 @@ input.btn {
   border: 1px solid rgba(#000, .05);
   border-bottom-color: rgba(#000, .35);
 }
+
+/* Browsers list */
+
+.inline-list__item {
+  width: 140px;
+  height: 140px;
+  float: left;
+  @include replace-text("chrome.png");
+  
+  
+  &.inline-list__item--chrome {
+    background-image: url(../images/chrome.png);
+    @include background-size(126px 121px);
+  }
+  &.inline-list__item--ff {
+    background-image: url(../images/ff.png);
+    @include background-size(120px 124px);
+  }
+  &.inline-list__item--opera {
+    background-image: url(../images/opera.png);
+    @include background-size(108px 118px);
+  }
+  &.inline-list__item--safari {
+    background-image: url(../images/safari.png);
+    @include background-size(112px 125px);
+  }
+  &.inline-list__item--ie {
+    background-image: url(../images/ie.png);
+    @include background-size(126px 123px);
+    float: right;
+  }
+}
+
