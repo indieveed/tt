@@ -144,30 +144,37 @@ input.btn {
   width: 140px;
   height: 140px;
   float: left;
-  @include replace-text("chrome.png");
-  
-  
-  &.inline-list__item--chrome {
-    background-image: url(../images/chrome.png);
-    @include background-size(126px 121px);
-  }
-  &.inline-list__item--ff {
-    background-image: url(../images/ff.png);
-    @include background-size(120px 124px);
-  }
-  &.inline-list__item--opera {
-    background-image: url(../images/opera.png);
-    @include background-size(108px 118px);
-  }
-  &.inline-list__item--safari {
-    background-image: url(../images/safari.png);
-    @include background-size(112px 125px);
-  }
+  background-repeat: no-repeat;
+  text-align: center;
   &.inline-list__item--ie {
-    background-image: url(../images/ie.png);
-    @include background-size(126px 123px);
     float: right;
   }
+
+  &.with-img .browser-name {
+    display: none;
+  }
+}
+
+.chrome-green {
+  color: #00933B;
+}
+.chrome-red {
+  color: #F90101;
+}
+.chrome-yellow {
+  color: #F2B50F;
+}
+.ff-orange {
+  color: #D64203;
+}
+.opera-red {
+  color: #CC0F16;
+}
+.safari-silver {
+  color: #737373;
+}
+.ie-blue {
+  color: #37a5e2;
 }
 
 
@@ -184,15 +191,22 @@ p {
   text-indent: 1em;
 }
 
+$column-gap: 85px;
+
 .columns {
-  @include columns(380em/16);
-  @include column-gap(85px);
-  overflow: visible;
+  margin-left: -$column-gap;
 }
+
+.column {
+  float: left;
+  padding-left: $column-gap;
+  width: 50%;
+}
+
 
 /* List */
 
-ul > li, .verical-list__item {
+.vertical-list__item {
   position: relative;
   padding-left: 1em;
   margin-left: -1em;
